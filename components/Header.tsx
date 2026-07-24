@@ -7,10 +7,10 @@ export function Header() {
         <div className="logo-wrap">
           <img
             className="logo"
-            src="/images/techverse-sanjita-logo-original.png"
+            src="/images/techverse-sanjita-logo-transparent.png"
             alt="TechVerse Sanjita"
-            width={699}
-            height={357}
+            width={1752}
+            height={897}
           />
         </div>
         <ThemeToggle />
