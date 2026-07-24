@@ -40,7 +40,10 @@ export async function generateMetadata(): Promise<Metadata> {
       description: "Receive a customized AI marketing plan built around your business.",
       images: [`${origin}/og.png`],
     },
-    icons: { icon: "/logo.png", apple: "/logo.png" },
+    icons: {
+      icon: "/images/free-ai-marketing-consultation.png",
+      apple: "/images/free-ai-marketing-consultation.png",
+    },
   };
 }
 

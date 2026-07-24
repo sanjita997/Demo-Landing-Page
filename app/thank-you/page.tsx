@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const nextSteps = [
@@ -11,7 +10,15 @@ export default function ThankYouPage() {
   return (
     <main className="thank-you">
       <div className="shell header-inner">
-        <div className="logo-wrap thank-logo"><Image className="logo" src="/logo.png" alt="TechVerse Sanjita" width={500} height={500} priority /></div>
+        <div className="logo-wrap thank-logo">
+          <img
+            className="logo"
+            src="/images/free-ai-marketing-consultation.png"
+            alt="TechVerse Sanjita"
+            width={500}
+            height={500}
+          />
+        </div>
         <ThemeToggle />
       </div>
       <div className="narrow">
