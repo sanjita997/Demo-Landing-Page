@@ -41,8 +41,8 @@ export async function generateMetadata(): Promise<Metadata> {
       images: [`${origin}/og.png`],
     },
     icons: {
-      icon: "/images/free-ai-marketing-consultation.png",
-      apple: "/images/free-ai-marketing-consultation.png",
+      icon: "/images/techverse-sanjita-logo-transparent.png",
+      apple: "/images/techverse-sanjita-logo-transparent.png",
     },
   };
 }

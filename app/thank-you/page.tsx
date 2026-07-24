@@ -13,10 +13,10 @@ export default function ThankYouPage() {
         <div className="logo-wrap thank-logo">
           <img
             className="logo"
-            src="/images/free-ai-marketing-consultation.png"
+            src="/images/techverse-sanjita-logo-transparent.png"
             alt="TechVerse Sanjita"
-            width={500}
-            height={500}
+            width={1752}
+            height={897}
           />
         </div>
         <ThemeToggle />
