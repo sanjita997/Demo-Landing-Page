@@ -133,7 +133,30 @@ a { color: inherit; text-decoration: none; }
 .promise-list { display: grid; gap: 12px; margin: 28px 0 0; padding: 0; list-style: none; }
 .promise-list li { display: flex; gap: 12px; align-items: center; color: var(--muted); }
 .promise-list span { color: var(--gold); }
-.form-card { padding: 26px; border: 1px solid var(--line); border-radius: 28px; background: var(--surface-strong); box-shadow: var(--shadow); }
+.form-card {
+  position: relative;
+  padding: 26px;
+  border: 1px solid color-mix(in srgb, var(--gold) 24%, var(--line));
+  border-radius: 28px;
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--surface-strong) 96%, var(--gold-soft)), var(--surface-strong) 52%),
+    var(--surface-strong);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.form-card::before {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  top: -150px;
+  right: -115px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--gold) 24%, transparent);
+  filter: blur(12px);
+  pointer-events: none;
+}
+.form-card > * { position: relative; }
 .form-card h2 { margin: 0 0 7px; font-size: 2.25rem; }
 .form-intro { margin: 0 0 25px; color: var(--muted); line-height: 1.55; }
 .field-grid { display: grid; gap: 18px; }
@@ -152,9 +175,23 @@ a { color: inherit; text-decoration: none; }
 .flodesk-load-error { color: #c6453e; margin: 0; font-size: .9rem; }
 #consultation-form .flodesk-shell [data-ff-el="root"].ff-6a72fd228bee88b470a87be8 {
   color: var(--ink) !important;
+  background: transparent !important;
+  font-family: var(--font-sans), sans-serif !important;
+}
+#consultation-form .flodesk-shell [data-ff-el="root"].ff-6a72fd228bee88b470a87be8,
+#consultation-form .flodesk-shell [data-ff-el="root"].ff-6a72fd228bee88b470a87be8 .ff-6a72fd228bee88b470a87be8__wrapper,
+#consultation-form .flodesk-shell [data-ff-el="root"].ff-6a72fd228bee88b470a87be8 .ff-6a72fd228bee88b470a87be8__form,
+#consultation-form .flodesk-shell [data-ff-el="root"].ff-6a72fd228bee88b470a87be8 .ff-6a72fd228bee88b470a87be8__content {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+#consultation-form .flodesk-shell [data-ff-el="root"].ff-6a72fd228bee88b470a87be8 .ff-6a72fd228bee88b470a87be8__fields {
+  display: grid !important;
+  gap: 12px !important;
 }
 #consultation-form .flodesk-shell [data-ff-el="root"].ff-6a72fd228bee88b470a87be8 .ff-6a72fd228bee88b470a87be8__field {
-  margin-bottom: 16px !important;
+  margin: 0 !important;
 }
 #consultation-form .flodesk-shell [data-ff-el="root"].ff-6a72fd228bee88b470a87be8 .ff-6a72fd228bee88b470a87be8__control {
   min-height: 52px !important;
@@ -164,6 +201,14 @@ a { color: inherit; text-decoration: none; }
   background: var(--bg) !important;
   color: var(--ink) !important;
   font-family: var(--font-sans), sans-serif !important;
+  font-size: .95rem !important;
+  line-height: 1.35 !important;
+  box-shadow: inset 0 1px 0 color-mix(in srgb, #fff 34%, transparent) !important;
+  transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease !important;
+}
+#consultation-form .flodesk-shell [data-ff-el="root"].ff-6a72fd228bee88b470a87be8 .ff-6a72fd228bee88b470a87be8__control::placeholder {
+  color: color-mix(in srgb, var(--muted) 72%, transparent) !important;
+  opacity: 1 !important;
 }
 #consultation-form .flodesk-shell [data-ff-el="root"].ff-6a72fd228bee88b470a87be8 .ff-6a72fd228bee88b470a87be8__label {
   color: var(--muted) !important;
@@ -184,9 +229,17 @@ a { color: inherit; text-decoration: none; }
   font-size: .92rem !important;
   letter-spacing: .04em !important;
   text-transform: none !important;
+  font-weight: 700 !important;
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease !important;
 }
 #consultation-form .flodesk-shell [data-ff-el="root"].ff-6a72fd228bee88b470a87be8 .ff-6a72fd228bee88b470a87be8__button:hover {
   transform: translateY(-2px);
+  box-shadow: 0 18px 42px rgba(183, 138, 61, .35) !important;
+  filter: brightness(1.03);
+}
+#consultation-form .flodesk-shell [data-ff-el="root"].ff-6a72fd228bee88b470a87be8 .ff-6a72fd228bee88b470a87be8__button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--gold) 55%, transparent) !important;
+  outline-offset: 3px !important;
 }
 #consultation-form .flodesk-shell [data-ff-el="root"].ff-6a72fd228bee88b470a87be8 .ff-6a72fd228bee88b470a87be8__success-message {
   color: var(--ink) !important;
@@ -194,6 +247,23 @@ a { color: inherit; text-decoration: none; }
   font-size: clamp(2rem, 5vw, 3.4rem) !important;
   line-height: 1.05 !important;
   text-transform: none !important;
+}
+#consultation-form .flodesk-shell [data-ff-el="root"].ff-6a72fd228bee88b470a87be8 [data-ff-el="error"] {
+  margin-top: 14px !important;
+  color: #c6453e !important;
+  font-family: var(--font-sans), sans-serif !important;
+  font-size: .85rem !important;
+}
+#consultation-form .flodesk-shell [data-ff-el="root"].ff-6a72fd228bee88b470a87be8 .fd-form-captcha {
+  color: var(--muted) !important;
+  font-family: var(--font-sans), sans-serif !important;
+}
+#consultation-form .flodesk-shell [data-ff-el="root"].ff-6a72fd228bee88b470a87be8 .fd-form-check__checkmark {
+  border-color: var(--gold) !important;
+  background: var(--bg) !important;
+}
+#consultation-form .flodesk-shell [data-ff-el="root"].ff-6a72fd228bee88b470a87be8 .fd-form-check__input:checked + .fd-form-check__checkmark {
+  background: var(--gold) !important;
 }
 
 .thank-you { min-height: 100vh; padding: 26px 0 80px; background: radial-gradient(circle at 50% 0, var(--gold-soft), transparent 38%), var(--bg); }
