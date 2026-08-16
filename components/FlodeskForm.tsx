@@ -5,6 +5,8 @@ const redirectObserver = String.raw`
   (function () {
     var root = document.querySelector('.ff-6a72fd228bee88b470a87be8[data-ff-el="root"]');
     if (!root) return;
+    var config = root.querySelector('[data-ff-el="config"]');
+    if (config) config.dataset.ffConfig = 'eyJ0cmlnZ2VyIjp7Im1vZGUiOiJpbW1lZGlhdGVseSIsInZhbHVlIjowfSwib25TdWNjZXNzIjp7Im1vZGUiOiJtZXNzYWdlIiwibWVzc2FnZSI6IiIsInJlZGlyZWN0VXJsIjoiaHR0cHM6Ly90ZWNodmVyc2Utc2Fuaml0YS1haS1tYXJrZXRpbmcuc2Fuaml0YW1ocnpuMy5jaGF0Z3B0LnNpdGUvdGhhbmtzIn0sImNvaSI6ZmFsc2UsInNob3dGb3JSZXR1cm5WaXNpdG9ycyI6dHJ1ZSwibm90aWZpY2F0aW9uIjpmYWxzZSwiZ2RwciI6eyJhY2NlcHRzTWFya2V0aW5nIjpmYWxzZSwicHJpdmFjeVBvbGljeSI6eyJlbmFibGVkIjpmYWxzZSwibWFuZGF0b3J5IjpmYWxzZX19LCJ0cmFja2luZ0NvbmZpZyI6eyJtZXRhUGl4ZWxJZCI6IiIsImNvb2tpZUJhbm5lckVuYWJsZWQiOmZhbHNlLCJnb29nbGVBbmFseXRpY3NJZCI6IiJ9fQ==';
     var scheduled = false;
     var redirect = function () {
       if (scheduled) return;
