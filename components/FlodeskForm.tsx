@@ -1,5 +1,10 @@
 import flodeskEmbed from "../public/flodesk-embed.html?raw";
 
+const liveFlodeskEmbed = flodeskEmbed.replace(
+  "aHR0cHM6Ly9jb25zdWx0LnNhbmppdGFtaHJ6bi5jb20vdGhhbmsteW91",
+  "aHR0cHM6Ly90ZWNodmVyc2Utc2Fuaml0YS1haS1tYXJrZXRpbmcuc2Fuaml0YW1ocnpuMy5jaGF0Z3B0LnNpdGUvdGhhbmtz",
+);
+
 const redirectObserver = String.raw`
 <script>
   (function () {
@@ -41,7 +46,7 @@ export function FlodeskForm() {
   return (
     <div
       className="flodesk-shell"
-      dangerouslySetInnerHTML={{ __html: flodeskEmbed + themeOverrides + redirectObserver }}
+      dangerouslySetInnerHTML={{ __html: liveFlodeskEmbed + themeOverrides + redirectObserver }}
     />
   );
 }
