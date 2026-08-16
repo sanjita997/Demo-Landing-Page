@@ -9,6 +9,6 @@ export default defineConfig({
     tailwindcss(),
     vinext(),
     sites(),
-    nitro(),
+    nitro({ preset: "cloudflare-module" }),
   ],
 });
