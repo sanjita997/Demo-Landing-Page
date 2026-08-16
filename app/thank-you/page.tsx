@@ -33,13 +33,20 @@ export default function ThankYouPage() {
           <h2 className="display section-heading">Watch This Short Video Before Your Consultation</h2>
           <p className="section-copy">In this short video, you&apos;ll learn:</p>
           <ul className="video-list"><li>Why many businesses struggle to generate consistent sales online</li><li>The common marketing mistakes that waste time and money</li><li>How AI can help you attract more customers and improve your marketing</li><li>How to get the most value from your upcoming consultation</li></ul>
-          <div className="video-placeholder" aria-label="Video embed placeholder"><div><span className="play" aria-hidden="true">▶</span><strong>Embedded Video Here</strong></div></div>
+          <div className="video-embed">
+            <iframe
+              src="https://www.youtube.com/embed/HYStQwLZRYE?feature=share"
+              title="AI marketing consultation preparation video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
           <p className="section-copy"><strong>Please watch the full video before your consultation.</strong> It will help you better understand the strategy we&apos;ll discuss together.</p>
         </section>
         <section className="question-card" id="whatsapp-setup">
           <h2 className="display">Have a Question?</h2>
           <p>If you&apos;d like to ask a question before your consultation, simply send us a message on WhatsApp. We&apos;ll be happy to help.</p>
-          <button className="primary-btn disabled-btn" type="button" disabled title="WhatsApp number not provided">👉 Message Us on WhatsApp</button>
+          <a className="primary-btn whatsapp-btn" href="https://wa.me/message/NMJL4L3YU5Z4K1" target="_blank" rel="noopener noreferrer">👉 Message Us on WhatsApp</a>
         </section>
         <section className="next-section">
           <span className="eyebrow">What Happens Next?</span>
